@@ -1,8 +1,9 @@
 /*Downloaded font added*/
 @font-face {
-    font-family: "Allerta";
-    src: url("/assets/fonts/AllertaStencil/AllertaStencil-Regular.ttf") format("truetype");
-  }
+  font-family: "Allerta";
+  src: url("/assets/fonts/AllertaStencil/AllertaStencil-Regular.ttf")
+    format("truetype");
+}
 
 * {
   margin: 0;
@@ -11,7 +12,7 @@
 }
 
 body {
-  background: linear-gradient(90deg, #aaf0db, 40%, #c9f0e4);
+  background: linear-gradient(90deg, #b7e9da, 40%, #d0e9e1);
 }
 
 .container {
@@ -39,7 +40,7 @@ body {
 
 .up-row,
 .bottom-row {
-    width: 90%;
+  width: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,11 +69,15 @@ h2 {
   padding: 5px;
 }
 
-img {
+.content img {
   width: 250px;
   height: 300px;
+  transition: 1s;
+  &:hover {
+    width: 200px;
+    height: 250px;
+  }
 }
-
 
 footer {
   margin: 10px;
