@@ -86,3 +86,12 @@ footer {
   text-align: center;
   padding: 10px;
 }
+
+.title {
+    font-family: sans-serif;
+  }
+.inventoryT {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
