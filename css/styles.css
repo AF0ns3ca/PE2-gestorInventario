@@ -1,3 +1,9 @@
+/*Downloaded font added*/
+@font-face {
+    font-family: "Allerta";
+    src: url("/assets/fonts/AllertaStencil/AllertaStencil-Regular.ttf") format("truetype");
+  }
+
 * {
   margin: 0;
   padding: 0;
@@ -20,6 +26,7 @@ body {
   text-align: center;
   padding: 20px;
   border-radius: 3px;
+  font-family: Allerta;
 }
 
 .content {
@@ -37,14 +44,14 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  gap: 150px;
+  gap: 120px;
 }
 
 .inventory,
 .actionFilter,
 .actionAdd,
 .actionEdit {
-  width: 300px;
+  width: 400px;
   height: 350px;
   background-color: #002d176c;
   margin: 10px;
@@ -54,6 +61,7 @@ body {
   align-items: center;
   cursor: pointer;
   border-radius: 10px;
+  font-family: Allerta;
 }
 
 h2 {
