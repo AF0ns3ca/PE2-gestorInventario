@@ -14,7 +14,7 @@
 body {
   /* background: linear-gradient(90deg, #a8e6d3, 40%, #d0e9e1); */
   /* background-image: url('/assets/wallpaper.jpg'); */
-  background-color: white;
+  background-color: #F6F9ED;
 }
 
 .container {
@@ -25,7 +25,7 @@ body {
 
 .head {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
   background-color: #002d17;
@@ -36,11 +36,26 @@ body {
   font-family: Allerta;
 }
 
-.head h1 {
-  margin: auto;
+.head-title{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
 }
 
-.head input {
+.head-actions{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: right;
+}
+
+.head h1 {
+  margin: 10px;
+}
+
+.head-actions input {
+  width: 100%;
   margin-left: 10px;
   padding: 10px;
   border-radius: 5px;
@@ -50,6 +65,7 @@ body {
 .head button {
   background-color: #a8e6d3;
   color: #002d17;
+  border: 2px solid #002d17;
   margin-left: 10px;
 }
 
@@ -57,6 +73,19 @@ body {
   background-color: #002d17;
   color: #a8e6d3;
   border: 2px solid #a8e6d3;
+}
+
+.radio-group {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.radio-group select{
+  width: 100%;
+  border-radius: 5px;
+  font-size: large;
 }
 
 .content {
@@ -122,9 +151,9 @@ footer {
 button {
   margin: 2% 2% 2% 2%;
   background-color: #002d17;
+  border: 1px solid #002d17;
   color: #a8e6d3;
   padding: 10px 20px;
-  border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -178,9 +207,4 @@ button {
   background-color: #d0e9e1;
   color: #002d17;
   border: 1px solid #002d17;
-}
-
-.radio-group {
-  display: flex;
-  flex-direction: column;
 }

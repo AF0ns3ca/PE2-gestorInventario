@@ -44,6 +44,7 @@ export const listProducts = () => {
     cell5.appendChild(editButton);
 
   });
+  
 };
 
 // export const selectRow = () => {
