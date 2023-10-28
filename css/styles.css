@@ -12,7 +12,9 @@
 }
 
 body {
-  background: linear-gradient(90deg, #a8e6d3, 40%, #d0e9e1);
+  /* background: linear-gradient(90deg, #a8e6d3, 40%, #d0e9e1); */
+  /* background-image: url('/assets/wallpaper.jpg'); */
+  background-color: white;
 }
 
 .container {
@@ -21,15 +23,40 @@ body {
   padding: 10px;
 }
 
-
 .head {
- 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
   background-color: #002d17;
   color: #fff;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   border-radius: 3px;
   font-family: Allerta;
+}
+
+.head h1 {
+  margin: auto;
+}
+
+.head input {
+  margin-left: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.head button {
+  background-color: #a8e6d3;
+  color: #002d17;
+  margin-left: 10px;
+}
+
+.head button:hover {
+  background-color: #002d17;
+  color: #a8e6d3;
+  border: 2px solid #a8e6d3;
 }
 
 .content {
@@ -62,7 +89,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
   border-radius: 10px;
   font-family: Allerta;
 }
@@ -74,7 +100,7 @@ h2 {
 .content img {
   width: 250px;
   height: 300px;
-  transition: 1s;
+  transition: 0.5s;
   &:hover {
     width: 200px;
     height: 250px;
@@ -93,18 +119,19 @@ footer {
   font-family: sans-serif;
 }
 
-button{
+button {
   margin: 2% 2% 2% 2%;
   background-color: #002d17;
-  color:white;
+  color: #a8e6d3;
   padding: 10px 20px;
-  border:none;
+  border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.2s ease;
-  
-  &:hover{background-color:#d0e9e1;
-  color:#002d17;}
+  &:hover {
+    background-color: #d0e9e1;
+    color: #002d17;
+  }
 }
 
 /*inventory.html*/
@@ -133,6 +160,27 @@ button{
   text-align: center;
 }
 .inventory-table tr:hover {
-  background-color: #000000;
-  color: rgb(181, 78, 78);
+  background-color: #002d1786;
+  color: #d0e9e1;
+}
+.inventory-table tr:hover button {
+  background-color: #d0e9e1;
+  color: #002d17;
+  border: 1px solid #002d17;
+}
+
+.found {
+  background-color: #002d17ae;
+  color: #d0e9e1;
+}
+
+.found button {
+  background-color: #d0e9e1;
+  color: #002d17;
+  border: 1px solid #002d17;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
 }

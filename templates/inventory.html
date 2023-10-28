@@ -1,35 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/inventory.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/styles.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="wrapper">
-            <div class="head">
-                <h1>Inventario</h1>
-              </div>
-            <div class="inventoryT">
-                <table class="inventory-table">
-                  <tr>
-                    <th>Titulo</th>
-                    <th>Autor</th>
-                    <th>Cantidad</th>
-                    <th>Precio</th>
-                    <th>Acciones</th>
-                  </tr>
-                  <tbody id="inventTable">
-      
-                  </tbody>
-                </table>
-              </div>
+      <div class="wrapper">
+        <div class="head">
+            <h1>Inventario</h1>
+            <input type="text" name="search" id="search" placeholder="Introduce para buscar"/>
+            <button id="btn-search">Buscar</button>
+            <form class="radio-group">
+              <label>
+                <input type="radio" name="group" id="radio-title" value="title" checked>
+                Titulo
+              </label>
+              <label>
+                <input type="radio" name="group" id="radio-author" value="author">
+                Autor
+              </label>
+            </form>
         </div>
-        <script src="../js/main.js" type="module"></script>
+        <div class="inventoryT">
+          <table class="inventory-table">
+            <tr>
+              <th>Titulo</th>
+              <th>Autor</th>
+              <th>Cantidad</th>
+              <th>Precio</th>
+              <th>Acciones</th>
+            </tr>
+            <tbody id="inventTable"></tbody>
+          </table>
+        </div>
+      </div>
+      <script src="../js/main.js" type="module"></script>
     </div>
-    
-</body>
+  </body>
 </html>
