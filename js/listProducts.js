@@ -1,8 +1,7 @@
 import { inventory } from "./products.js";
 
 export const listProducts = () => {
-  const table = document.getElementById("inventory-table-events");
-  const cleanTable = document.getElementById("clear-table");
+  const cleanTable = document.getElementById("inventTable");
   inventory.forEach((item) => {
     const row = cleanTable.insertRow();
 
@@ -10,12 +9,15 @@ export const listProducts = () => {
     const cell2 = row.insertCell(1);
     const cell3 = row.insertCell(2);
     const cell4 = row.insertCell(3);
+    const cell5 = row.insertCell(4);
 
     cell1.innerHTML = item.nombre;
 
-    cell2.innerHTML = item.cantidad;
+    cell2.innerHTML = item.autor;
+    
+    cell3.innerHTML = item.cantidad;
 
-    cell3.innerHTML = item.precio;
+    cell4.innerHTML = item.precio;
 
     const deleteButton = document.createElement("button");
     deleteButton.innerText = "Borrar";
@@ -33,14 +35,14 @@ export const listProducts = () => {
       cleanTable.innerHTML="";
       listProducts();
     });
-    cell4.appendChild(deleteButton); //con esta linea estamos insertando el boton delete en la celda correspondiente
+    cell5.appendChild(deleteButton); //con esta linea estamos insertando el boton delete en la celda correspondiente
 
     const editButton = document.createElement("button");
     editButton.innerText = "Editar";
     editButton.addEventListener("click", () => {
       /*con este boton se editará el producto */
     });
-    cell4.appendChild(editButton);
+    cell5.appendChild(editButton);
 
 
 
