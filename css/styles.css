@@ -12,7 +12,7 @@
 }
 
 body {
-  /* background: linear-gradient(90deg, #a8e6d3, 40%, #d0e9e1); */
+  background: linear-gradient(90deg, #a8e6d3, 10%, #d0e9e1);
   /* background-image: url('/assets/wallpaper.jpg'); */
   background-color: #F6F9ED;
 }
@@ -22,6 +22,8 @@ body {
   height: 100vh;
   padding: 10px;
 }
+
+
 
 .head {
   display: flex;
@@ -40,6 +42,7 @@ body {
   width: 100%;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .head-actions{
@@ -163,6 +166,16 @@ button {
   }
 }
 
+a{
+  font-size: large;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.5s;
+  &:hover{
+    font-size: x-large;
+  }
+}
+
 /*inventory.html*/
 .inventoryT {
   width: 100%;
@@ -207,4 +220,18 @@ button {
   background-color: #d0e9e1;
   color: #002d17;
   border: 1px solid #002d17;
+}
+
+.add-form{
+  width: 100%;
+  display: flex;
+  padding-bottom: 10px;
+  
+}
+.item-form-styles{
+  width: 100%;
+  padding: 10px;
+  background-color: #002d17;
+  color:#fff;
+  border-radius: 5px;
 }
