@@ -40,6 +40,14 @@ export const listProducts = () => {
     editButton.innerText = "Editar";
     editButton.addEventListener("click", () => {
       /*con este boton se editará el producto */
+      const itemName = document.getElementById('product-title')
+      const itemAuthor = document.getElementById('product-author')
+      const itemQuantity = document.getElementById('product-quantity')
+      const itemPrice = document.getElementById('product-price')
+      itemName.value = item.nombre;
+      itemAuthor.value = item.autor;
+      itemQuantity.value = item.cantidad;
+      itemPrice.value = item.precio;
     });
     cell5.appendChild(editButton);
 
