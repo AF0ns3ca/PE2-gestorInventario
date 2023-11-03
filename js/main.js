@@ -2,6 +2,7 @@ import { listProducts } from "./listProducts.js";
 //import{selectRow} from "./listProducts.js";
 import { searchProducts } from "./searchProduct.js";
 import { insertProducts } from "./insertProducts.js";
+import { saveEditProducts } from "./editProduct.js";
 
 /**
  * Autor: Alvaro Fonseca Hernandez
@@ -20,5 +21,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   btnForm.addEventListener("click", () => {
     insertProducts();
+  });
+
+  const btnSave = document.getElementById("btn-save");
+
+  btnSave.addEventListener("click", () => {
+    saveEditProducts();
   });
 });

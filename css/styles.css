@@ -19,7 +19,7 @@ body {
 
 .container {
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   padding: 10px;
 }
 
@@ -65,7 +65,7 @@ body {
   border: none;
 }
 
-.head button {
+.head button, .btn-form {
   background-color: #a8e6d3;
   color: #002d17;
   border: 2px solid #002d17;
@@ -73,6 +73,12 @@ body {
 }
 
 .head button:hover {
+  background-color: #002d17;
+  color: #a8e6d3;
+  border: 2px solid #a8e6d3;
+}
+
+.btn-form:hover{
   background-color: #002d17;
   color: #a8e6d3;
   border: 2px solid #a8e6d3;
@@ -225,13 +231,28 @@ a{
 .add-form{
   width: 100%;
   display: flex;
-  padding-bottom: 10px;
+  border-radius: 3px;
+  background-color: #002d17;
   
 }
 .item-form-styles{
   width: 100%;
-  padding: 10px;
-  background-color: #002d17;
+  padding-left: 20px;
   color:#fff;
   border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.item-form-styles input{
+  width: 100%;
+  margin-left: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.itam-form-styles label{
 }
