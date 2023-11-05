@@ -21,4 +21,8 @@ export const saveEditProducts = () => {
     }
     listProducts();
   });
+  itemName.value = "";
+  itemAuthor.value = "";
+  itemQuantity.value = "";
+  itemPrice.value = "";
 };

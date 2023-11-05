@@ -254,5 +254,6 @@ a{
   border: none;
 }
 
-.itam-form-styles label{
+.hidden {
+  display: none;
 }

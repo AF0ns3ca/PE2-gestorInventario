@@ -52,9 +52,12 @@ export const listProducts = () => {
       itemQuantity.value = item.cantidad;
       itemPrice.value = item.precio;
       console.log("Item encontrado: " + foundItemID)
+      document.getElementById("btn-save").classList.toggle("hidden");
+      document.getElementById("btn-form").classList.toggle("hidden");
     });
     cell5.appendChild(editButton);
 
+    //document.getElementById("btn-form").disabled = true;
   });
 };
 
