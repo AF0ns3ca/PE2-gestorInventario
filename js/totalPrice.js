@@ -1,8 +1,7 @@
 import { inventory } from "./products.js";
-import { listProducts } from "./listProducts.js";
 
 
-
+//Metodo que mostrará el precio total del inventario cada vez que sea llamado
 export const totalPrice = () => {
   const total = document.getElementById("total-price-label");
     let totalPrice = 0;

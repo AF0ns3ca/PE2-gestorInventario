@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   btnSave.addEventListener("click", () => {
     saveEditProducts();
+    //Aparecera el boton guardar o añadir según sea el caso
     document.getElementById("btn-save").classList.toggle("hidden");
     document.getElementById("btn-form").classList.toggle("hidden");
   });

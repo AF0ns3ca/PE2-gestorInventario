@@ -37,6 +37,7 @@ export const listProducts = () => {
           inventory.splice(index, 1);
           
         }
+        //Aparecera el boton guardar o añadir según sea el caso
         if (document.getElementById("btn-form").classList.contains("hidden")) {
           document.getElementById("btn-save").classList.toggle("hidden");
           document.getElementById("btn-form").classList.toggle("hidden");
@@ -63,6 +64,7 @@ export const listProducts = () => {
       itemQuantity.value = item.cantidad;
       itemPrice.value = item.precio;
       console.log("Item encontrado: " + foundItemID);
+      //Aparecera el boton guardar o añadir según sea el caso
       if(document.getElementById("btn-save").classList.contains("hidden")){
         document.getElementById("btn-save").classList.toggle("hidden");
         document.getElementById("btn-form").classList.toggle("hidden");

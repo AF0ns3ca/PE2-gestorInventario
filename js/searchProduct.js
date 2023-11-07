@@ -1,4 +1,6 @@
 import { inventory } from "./products.js";
+
+//Metodo para buscar dentro del array del inventario. Se podrá buscar en funcion de dos valores, titulo y autor
 export const searchProducts = () => {
   let productFound = false;
   cleanClasses();

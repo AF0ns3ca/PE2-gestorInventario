@@ -7,6 +7,7 @@ const itemName = document.getElementById("product-title");
 const itemAuthor = document.getElementById("product-author");
 const itemQuantity = document.getElementById("product-quantity");
 const itemPrice = document.getElementById("product-price");
+//Metodo para editar el producto seleccionado, cuyos datos ya estaran cargados en el formulario que tambien sirve para añadir nuevos productos
 export const saveEditProducts = () => {
   console.log(foundItemID);
   if (parseFloat(itemPrice.value) <= 0 || parseFloat(itemQuantity.value) <= 0) {
@@ -31,6 +32,7 @@ export const saveEditProducts = () => {
       listProducts();
       totalPrice();
     });
+    //Limpieza de campos
     itemName.value = "";
     itemAuthor.value = "";
     itemQuantity.value = "";
