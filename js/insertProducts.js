@@ -42,6 +42,7 @@ export const insertProducts = () => {
       listProducts();
       totalPrice();
     }
+  } else {
+    alert("No puede haber campos vacios");
   }
-  // });
 };

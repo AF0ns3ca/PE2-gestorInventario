@@ -3,6 +3,7 @@ import { searchProducts } from "./searchProduct.js";
 import { insertProducts } from "./insertProducts.js";
 import { saveEditProducts } from "./editProduct.js";
 import { totalPrice } from "./totalPrice.js";
+import { sortAuthor, sortPrice, sortQuantity, sortTitle } from "./sortProducts.js";
 
 /**
  * Autor: Alvaro Fonseca Hernandez
@@ -32,4 +33,26 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("btn-save").classList.toggle("hidden");
     document.getElementById("btn-form").classList.toggle("hidden");
   });
+
+  //Filtros, para filtrar por cada uno de los campos hacer click en el encabezado de la tabla de cada elemento, mas informacion en sortProducts.js
+  const titleSort = document.getElementById("title-sort");
+  titleSort.addEventListener("click", () => {
+    sortTitle();
+  });
+
+  const authorSort = document.getElementById("author-sort");
+  authorSort.addEventListener("click", () => {
+    sortAuthor();
+  });
+
+  const quantitySort = document.getElementById("quantity-sort");
+  quantitySort.addEventListener("click", () => {
+    sortQuantity();
+  });
+
+  const priceSort = document.getElementById("price-sort");
+  priceSort.addEventListener("click", () => {
+    sortPrice();
+  });
+
 });
