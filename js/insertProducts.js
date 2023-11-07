@@ -1,42 +1,47 @@
 import { inventory } from "./products.js";
 import { listProducts } from "./listProducts.js";
+import { totalPrice } from "./totalPrice.js";
 
 export const insertProducts = () => {
-    const itemForm = document.getElementById('item-form-events');
-    itemForm.addEventListener("submit",function(e) {
+  //Capturar los valores introducidos por el usuario
+  const itemName = document.getElementById("product-title");
+  const itemAuthor = document.getElementById("product-author");
+  const itemQuantity = document.getElementById("product-quantity");
+  const itemPrice = document.getElementById("product-price");
 
-        e.preventDefault();/*le quitamos las propiedades a la etiqueta form,no lo tratamos como formulario si no como algo que tiene 3 inputs */
+  //validar que los campos no estén vacios
+  if (
+    itemName.value &&
+    itemAuthor.value &&
+    !isNaN(parseInt(itemQuantity.value)) &&
+    !isNaN(parseFloat(itemPrice.value))
+  ) {
+    if (parseFloat(itemPrice.value) <= 0 || parseInt(itemQuantity.value) <= 0) {
+      alert("Introduzca valores válidos");
+    } else {
+      //crear un nuevo objeto
+      const newProduct = {
+        id: inventory.length + 1,
+        nombre: itemName.value,
+        autor: itemAuthor.value,
+        cantidad: parseInt(itemQuantity.value),
+        precio: parseFloat(itemPrice.value),
+      };
 
-        //Capturar los valores introducidos por el usuario
-        const itemName = document.getElementById('product-title').value
-        const itemAuthor = document.getElementById('product-author').value
-        const itemQuantity = parseInt(document.getElementById('product-quantity').value)
-        const itemPrice = parseFloat(document.getElementById('product-price').value)
+      itemName.value = "";
+      itemAuthor.value = "";
+      itemQuantity.value = "";
+      itemPrice.value = "";
+      //Agregar el nuevo producto al inventario
+      inventory.push(newProduct);
 
-
-        //validar que los campos no estén vacios
-        if (itemName && itemAuthor && !isNaN(itemQuantity) && !isNaN(itemPrice)) {
-            // vamos a almacenar los tres valores en un objeto, las tres const
-            //crear un nuevo objeto
-            const newProduct = {
-                id: inventory.length + 1,
-                nombre: itemName,
-                autor: itemAuthor,
-                cantidad: itemQuantity,
-                precio: itemPrice
-            }
-            //Agregar el nuevo producto al inventario
-            inventory.push(newProduct)
-            
-            //limpiar los campos del formulario
-            itemForm.reset()
-            //limpiar la tabla antes de la nueva inserción
-            const cleanTable = document.getElementById("inventTable");
-            cleanTable.innerHTML = "";
-            console.log(newProduct);
-            listProducts()
-
-        }
-    });
-
-}
+      //limpiar la tabla antes de la nueva inserción
+      const cleanTable = document.getElementById("inventTable");
+      cleanTable.innerHTML = "";
+      console.log(newProduct);
+      listProducts();
+      totalPrice();
+    }
+  }
+  // });
+};

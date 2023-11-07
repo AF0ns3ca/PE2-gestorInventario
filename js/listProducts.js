@@ -1,7 +1,11 @@
 import { inventory } from "./products.js";
+import { totalPrice } from "./totalPrice.js";
 export let foundItemID;
+const itemName = document.getElementById("product-title");
+const itemAuthor = document.getElementById("product-author");
+const itemQuantity = document.getElementById("product-quantity");
+const itemPrice = document.getElementById("product-price");
 export const listProducts = () => {
-  
   const cleanTable = document.getElementById("inventTable");
   cleanTable.innerHTML = "";
   inventory.forEach((item) => {
@@ -31,33 +35,41 @@ export const listProducts = () => {
         //Si el indice resultante no es -1, es que ha habido una coincidencia. Si hay coincidencia se puede borrar
         if (index !== -1) {
           inventory.splice(index, 1);
+          
         }
+        if (document.getElementById("btn-form").classList.contains("hidden")) {
+          document.getElementById("btn-save").classList.toggle("hidden");
+          document.getElementById("btn-form").classList.toggle("hidden");
+        }
+        itemName.value = "";
+      itemAuthor.value = "";
+      itemQuantity.value = "";
+      itemPrice.value = "";
       }
       cleanTable.innerHTML = "";
       listProducts();
+      totalPrice();
     });
     cell5.appendChild(deleteButton); //con esta linea estamos insertando el boton delete en la celda correspondiente
-    
+
     const editButton = document.createElement("button");
     editButton.innerText = "Editar";
     editButton.addEventListener("click", () => {
+      window.location.href = "#add-form";
       foundItemID = item.id;
       /*con este boton se editará el producto */
-      const itemName = document.getElementById('product-title')
-      const itemAuthor = document.getElementById('product-author')
-      const itemQuantity = document.getElementById('product-quantity')
-      const itemPrice = document.getElementById('product-price')
       itemName.value = item.nombre;
       itemAuthor.value = item.autor;
       itemQuantity.value = item.cantidad;
       itemPrice.value = item.precio;
-      console.log("Item encontrado: " + foundItemID)
-      document.getElementById("btn-save").classList.toggle("hidden");
-      document.getElementById("btn-form").classList.toggle("hidden");
+      console.log("Item encontrado: " + foundItemID);
+      if(document.getElementById("btn-save").classList.contains("hidden")){
+        document.getElementById("btn-save").classList.toggle("hidden");
+        document.getElementById("btn-form").classList.toggle("hidden");
+      }
+      totalPrice();
     });
     cell5.appendChild(editButton);
-
-    //document.getElementById("btn-form").disabled = true;
   });
 };
 

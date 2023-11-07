@@ -5,17 +5,14 @@ export const searchProducts = () => {
   const cleanTable = document.getElementById("inventTable");
   const searchBar = document.getElementById("search");
   const selectFilter = document.getElementById("select-group").value;
-  //const radioAutor = document.getElementById('radio-author');
   if(searchBar.value !== ""){
     inventory.forEach((item, i) => {
         if (selectFilter === "title") {
-          //if(radioTitle.checked){
           if (item.nombre.toLowerCase() === searchBar.value.toLowerCase()) {
             cleanTable.rows[i].classList.add("found");
             productFound = true;
           }
         } else if (selectFilter === "author") {
-          //else if(radioAutor.checked){
           if (item.autor.toLowerCase() === searchBar.value.toLowerCase()) {
             cleanTable.rows[i].classList.add("found");
             productFound = true;

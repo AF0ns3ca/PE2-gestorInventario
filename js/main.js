@@ -11,6 +11,7 @@ import { totalPrice } from "./totalPrice.js";
 
 //Listamos los productos
 document.addEventListener("DOMContentLoaded", listProducts);
+document.addEventListener("DOMContentLoaded", totalPrice);
 
 document.addEventListener("DOMContentLoaded", () => {
   //Button for searching in the inventory table
@@ -18,8 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
   btnSearch.addEventListener("click", () => {
     searchProducts();
   });
-  const btnForm = document.getElementById("item-form-events");
 
+  const btnForm = document.getElementById("btn-form");
   btnForm.addEventListener("click", () => {
     insertProducts();
   });
@@ -30,10 +31,5 @@ document.addEventListener("DOMContentLoaded", () => {
     saveEditProducts();
     document.getElementById("btn-save").classList.toggle("hidden");
     document.getElementById("btn-form").classList.toggle("hidden");
-  });
-
-  const btnTotal = document.getElementById("btn-total");
-  btnTotal.addEventListener("click", () => {
-    totalPrice();
   });
 });

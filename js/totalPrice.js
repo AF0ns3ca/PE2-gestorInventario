@@ -4,16 +4,11 @@ import { listProducts } from "./listProducts.js";
 
 
 export const totalPrice = () => {
+  const total = document.getElementById("total-price-label");
     let totalPrice = 0;
     inventory.forEach(item => {
         totalPrice += (item.cantidad*item.precio)
     })
-    alert("Precio total Inventario: $ "+totalPrice.toFixed(2)) 
-    let totalPriceRow = `
-    <tr>
-      <td colspan="3">Precio total inventario:</td>
-      <td>${totalPrice.toFixed(2)}€</td>
-    </tr>
-  `;
+    total.innerHTML = `$${totalPrice.toLocaleString()}`;
 }
 
